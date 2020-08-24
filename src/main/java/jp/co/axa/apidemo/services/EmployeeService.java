@@ -4,15 +4,21 @@ import jp.co.axa.apidemo.entities.Employee;
 
 import java.util.List;
 
+// An interface with methods to access and modify Employee data in EmployeeRepository
 public interface EmployeeService {
 
-    public List<Employee> retrieveEmployees();
+    // get all employees from EmployeeRepository and store them in a List
+    List<Employee> retrieveEmployees();
 
-    public Employee getEmployee(Long employeeId);
+    // get a particular Employee from EmployeeRepository using employeeId
+    Employee getEmployee(Long employeeId);
 
-    public void saveEmployee(Employee employee);
+    // save an employee to EmployeeRepository
+    void saveEmployee(Employee employee);
 
-    public void deleteEmployee(Long employeeId);
+    // delete an Employee by employeeId from EmployeeRepository
+    void deleteEmployee(Long employeeId);
 
-    public void updateEmployee(Employee employee);
+    // update an employee in EmployeeRepository
+    void updateEmployee(Employee employee);
 }

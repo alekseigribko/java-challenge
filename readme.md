@@ -10,28 +10,19 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 
 > Don't forget to set the `JDBC URL` value as `jdbc:h2:mem:testdb` for H2 UI.
 
+What was done:
+- Removed `System.out.println` statements in `EmploeyeeController.java` (it's preferable to user an actual logger);
+- EmployeeServiceImpl  `public Employee getEmployee(Long employeeId)` returns Optional, hence added an exception;
+- Added try/catch blocks in EmployeeServiceImpl;
+- Implemented constructor injection for EmployeeRepository;
+- Commented the code;
+- Removed a bug in `EmployeeController.java` on the line 48 ( the ` if(emp != null)` check was never done);
+- fixed some style issues (spaces, new line at the end of each class etc);
+- Added tests `ApiDemoApplicationTest`;
+- Generated persistance mapping for Employee java (by Database schema).
 
-
-### Instructions
-
-- Fork this project
-- Enhance the code in any ways you can see, you are free!. Some possibilities:
-  - Add tests
-  - Change syntax
-  - Improve doc and comments
-  - Fix any bug you might find
-- Edit readme.md and add any comments. It can be about what you did, what you would have done if you had more time, etc.
-- Send us the link of your fork
-
-#### Restrictions
-- use java 8
-
-
-#### What we will look for
-- Readability of your code
-- Documentation
-- Comments in your code 
-- Appropriate usage of spring boot
-- Appropriate usage of packages
-- Is the application running as expected
-- No performance issues
+What could be done(provided there would have been more time):
+- focus more on testing the app;
+- The proper documentation and tests for Swagger;
+- Focus on security. Currently, the web-application has no user verification -- no password is required to login;
+  With that being said, H2 interface could be turned off by default and an API could be used istead.
